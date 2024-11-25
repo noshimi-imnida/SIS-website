@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cart Page</title>
+  <style>
+    /* CSS for styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .total {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+      width: calc(100% - 16px);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Shopping Cart</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price (Rs.)</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody id="cartItems">
+        <!-- Items will be added here dynamically -->
+      </tbody>
+    </table>
+    <p class="total" id="totalCost">Total: 0.00 Rs.</p>
+
+    <h2>Add Product</h2>
+    <input type="text" id="productName" placeholder="Product Name" required>
+    <input type="number" id="productPrice" placeholder="Price" min="0" required>
+    <input type="number" id="productQuantity" placeholder="Quantity" min="1" required>
+    <button id="addProductButton">Add to Cart</button>
+  </div>
+
+  <script>
+    // JavaScript for functionality
+    let cart = [];
+
+    function updateCart() {
+      const cartItems = document.getElementById("cartItems");
+      cartItems.innerHTML = ""; // Clear existing items
+
+      let totalCost = 0;
+
+      cart.forEach(item => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${item.name}</td>
+          <td>${item.price}</td>
+          <td>${item.quantity}</td>
+        `;
+
+        cartItems.appendChild(row);
+
+        totalCost += item.price * item.quantity;
+      });
+
+      document.getElementById("totalCost").innerText = `Total: ${totalCost.toFixed(2)}Rs.`;
+    }
+
+    document.getElementById("addProductButton").addEventListener("click", () => {
+      const name = document.getElementById("productName").value;
+      const price = parseFloat(document.getElementById("productPrice").value);
+      const quantity = parseInt(document.getElementById("productQuantity").value);
+
+      if (name && price > 0 && quantity > 0) {
+        cart.push({ name, price, quantity });
+        updateCart();
+
+        // Clear inputs
+        document.getElementById("productName").value = "";
+        document.getElementById("productPrice").value = "";
+        document.getElementById("productQuantity").value = "";
+      } else {
+        alert("Please enter valid product details.");
+      }
+    });
+
+    // Initial cart update
+    updateCart();
+  </script>
+</body>
+</html>

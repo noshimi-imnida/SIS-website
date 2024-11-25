@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>StyleInSynergy</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .navbar {
+            background-color: #b8c5d0;
+        }
+
+        .navbar-brand img {
+            width: 200px;
+        }
+
+        .product-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-item h3 {
+            margin: 15px 0;
+            color: #4a154b;
+        }
+
+        .product-item p {
+            color: #888;
+        }
+
+        .product-item button {
+            background-color: #4a154b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .product-item button:hover {
+            background-color: #6a1b6a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="C:\Users\hp\Downloads\Beige Feminine and Beauty Fashion Boutique Logo (Banner (Landscape)).png" alt="Logo">
+            </a>
+            <div class="d-flex">
+                <input type="text" class="form-control me-2" id="searchInput" placeholder="Search for products...">
+                <button class="btn btn-outline-dark" onclick="searchProduct()">Search</button>
+            </div>
+            <div class="ms-3">
+                <a href="file:///C:/Users/hp/Documents/SIS%20Website/Webpages/Sign%20in.html">Sign In</a>
+                <a href="file:///C:/Users/hp/Documents/SIS%20Website/Webpages/order.html">Orders</a>
+                <a href="file:///C:/Users/hp/Documents/SIS%20Website/Webpages/cart.html" >Cart</a>
+            </div>
+        </div>
+    </nav>
+	<br>
+    <h1> <i> <u> About us </u> </i></h1>
+    <p> At Style in Synergy, we believe in the power of creativity and craftsmanship coming together. Our mission is to bring unique, handmade resin art and custom creations to life, adding a personal touch to every product. From custom keychains to resin bookmarks, jewelry boxes, and name showpieces, we offer products designed to inspire and elevate everyday moments.
+
+Currently, we're focused on expanding our collection with vibrant, personalized pieces while connecting with art lovers and creating meaningful, functional art that speaks to individual style. Join us in celebrating the beauty of handmade designs! </p>	
+
+    <!-- Product Listing -->
+    <section class="container mt-5">
+        <h2 class="text-center mb-4">Featured Products</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Sample Product 1 -->
+            <div class="col">
+                <div class="product-item">
+                    <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-11-15 at 9.14.47 PM.jpeg" class="img-fluid" alt="Keychains">
+                    <h3>Keychains</h3>
+                    <p>99 Rs.</p>
+                    <a href="file:///C:/Users/hp/Documents/SIS%20Website/Webpages/Keychains.html" style="text-decoration: none;">
+   			 <button> View More </button>
+ 		    </a>
+                </div>
+            </div>
+
+            <!-- Sample Product 2 -->
+            <div class="col">
+                <div class="product-item">
+                    <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-11-15 at 9.14.56 PM.jpeg" class="img-fluid" alt="Photo Keychains">
+                    <h3>Photo Keychains</h3>
+                    <p>199 Rs.</p>
+                    <a href="file:///C:/Users/hp/Documents/SIS%20Website/Webpages/photo%20keychain.html" style="text-decoration: none;">
+   			 <button> View More </button>
+ 		    </a>
+                </div>
+            </div>
+
+
+            <!-- Sample Product 3 -->
+            <div class="col">
+                <div class="product-item">
+                    <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-11-15 at 9.14.59 PM.jpeg" class="img-fluid" alt="Combo">
+                    <h3>Combo</h3>
+                    <p>199 Rs.</p>
+                    <a href="file:///C:/Users/hp/Documents/SIS%20Website/Webpages/combo.html" style="text-decoration: none;">
+   			 <button> View More </button>
+ 		    </a>
+                </div>
+            </div>
+            
+
+	   <!-- Sample Product 4 -->
+            <div class="col">
+                <div class="product-item">
+                    <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-11-15 at 9.14.47 PM (1).jpeg" class="img-fluid" alt="Jewelry Box">
+                    <h3>Jewelry Box</h3>
+                    <p>499 Rs.</p>
+                    <a href="file:///C:/Users/hp/Documents/SIS%20Website/Webpages/jewellery%20box.html" style="text-decoration: none;">
+   			 <button> View More </button>
+ 		    </a>
+                </div>
+            </div>
+	  
+	   
+            <!-- Sample Product 5 -->
+            <div class="col">
+                <div class="product-item">
+                    <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-11-15 at 9.14.59 PM (1).jpeg" class="img-fluid" alt="Led Stand">
+                    <h3>Led Stand</h3>
+                    <p>599 Rs.</p>
+                    <a href="file:///C:/Users/hp/Documents/SIS%20Website/Webpages/led.html" style="text-decoration: none;">
+   			 <button> View More </button>
+ 		    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4">
+        Follow us on ~ <br> 
+        Instagram : <a href="https://www.instagram.com/styleinsynergy/profilecard/?igsh=MWgzc2tobGM4ZXUwOQ%3D%3D">StyleInSynergy</a> <br>
+	Email : <a href="mailto:styleinsynergy@gmail.com">styleinsynergy@gmail.com</a>
+    </footer>
+    <script>
+        function searchProduct() {
+            const searchQuery = document.getElementById('searchInput').value;
+            alert("Searching for: " + searchQuery);
+        }
+    </script>
+</body>
+</html>

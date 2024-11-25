@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simple Order Page</title>
+  <style>
+    /* CSS for styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #total {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Order Your Product</h1>
+    <form id="orderForm">
+      <label for="product">Select Product:</label>
+      <select id="product" name="product">
+        <option value="99">Keychain (99 Rs.)</option>
+        <option value="199">Combo (199 Rs.)</option>
+	<option value="199">Photo keychain (199 Rs.)</option>
+	<option value="499">Jewelry box (499 Rs.)</option>
+	<option value="599">Led stand (599 Rs.)</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+      <button type="button" id="calculateButton">Calculate Total</button>
+    </form>
+
+    <p id="total"></p>
+  </div>
+
+  <script>
+    // JavaScript for functionality
+    document.getElementById('calculateButton').addEventListener('click', () => {
+      const productPrice = parseFloat(document.getElementById('product').value);
+      const quantity = parseInt(document.getElementById('quantity').value);
+
+      if (quantity > 0) {
+        const total = productPrice * quantity;
+        document.getElementById('total').innerText = `Total Cost: ${total.toFixed(2)}Rs.`;
+      } else {
+        document.getElementById('total').innerText = 'Please enter a valid quantity.';
+      }
+    });
+  </script>
+</body>
+</html>
